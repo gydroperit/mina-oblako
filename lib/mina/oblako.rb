@@ -42,7 +42,7 @@ namespace :oblako do
     comment %(Symlinking nginx config file to #{nginx_enabled_config})
     command %(sudo ln -nfs #{nginx_config} #{nginx_enabled_config})
 
-    invoke :'nginx:restart'
+    invoke :'nginx:reload'
   end
 
   %w(stop start restart reload status).each do |action|
